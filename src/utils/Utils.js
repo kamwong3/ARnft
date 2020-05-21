@@ -217,6 +217,8 @@ export default class Utils {
     const found = (msg) => {
       if (!msg) {
         world = null
+        const notFoundEvent = new CustomEvent('notFound')
+        document.dispatchEvent(notFoundEvent)
       } else {
         world = JSON.parse(msg.matrixGL_RH)
         const matrixGLrhEvent = new CustomEvent('getMatrixGL_RH', { detail: { matrixGL_RH: world } })

@@ -30,6 +30,9 @@ export default class ThreejsRenderer {
       const matrix = Utils.interpolate(ev.detail.matrixGL_RH)
       Utils.setMatrix(this.root.matrix, matrix)
     })
+    document.addEventListener('notFound', (ev) => {
+      this.root.visible = false
+    })
 
     this.root.visible = false
 
